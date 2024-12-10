@@ -134,6 +134,9 @@ docker run -d --name password-updater --network my_network --mount source=shared
 
 #### Vérification de la communication entre les conteneurs  
 ```bash
+docker exec -it user-generator bash
+apt-get update
+apt-get install iputils-ping
 docker exec -it user-generator ping password-updater
 ```
 
